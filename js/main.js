@@ -54,3 +54,8 @@ function calcola(){
 
     document.getElementById("mio_id").innerHTML = messaggio;
 }
+
+function showDiv() {
+    document.getElementById('welcomeDiv').style.display = "block";
+ }
+ 
