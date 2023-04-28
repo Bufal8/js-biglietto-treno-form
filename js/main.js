@@ -12,11 +12,16 @@ const euroPerChilometro = 0.21;
 function prendiChilometri(){
     userChilometri = document.getElementById("chilometri-utente").value = "";
 }
+    console.log("Chilometri inseriti dall'utente: " + prendiChilometri());
+
+
 
 // immettere l'età del passeggero
 function prendiEta(){
     userEta = document.getElementById("eta-utente").value = "";
 }
+
+console.log("Età inserita dall'utente: " + prendiEta());
 
 // moltiplicare i chilometri da percorrere per la costante 0.21€
 userTotaleParziale = userChilometri * euroPerChilometro;
