@@ -8,36 +8,41 @@ let userChilometri, userEta, userTotaleParziale, userTotale, messaggio;
 const euroPerChilometro = 0.21;
 
 
-// immettere i chilometri da percorrere
-function prendiChilometri(){
-    userChilometri = document.getElementById("chilometri-utente").value;
-}
-    console.log("Chilometri inseriti dall'utente: " + prendiChilometri());
 
 
 
-// immettere l'età del passeggero
-function prendiEta(){
-    userEta = document.getElementById("eta-utente").value;
-}
 
-console.log("Età inserita dall'utente: " + prendiEta());
-
-// moltiplicare i chilometri da percorrere per la costante 0.21€
-userTotaleParziale = userChilometri * euroPerChilometro;
 
 // calcolare lo sconto
 // let arrotondamento = userTotale.toFixed(2);
 function calcola(){
     
+    // immettere i chilometri da percorrere
+    function prendiChilometri(){
+        userChilometri = document.getElementById("chilometri-utente").value;
+    }
+    console.log("Chilometri inseriti dall'utente: " + userChilometri);
+    
+    
+    
+    
+    // immettere l'età del passeggero
+    function prendiEta(){
+        userEta = document.getElementById("eta-utente").value;
+    }
+    console.log("Età inserita dall'utente: " + userEta);
+
+    // moltiplicare i chilometri da percorrere per la costante 0.21€
+    userTotaleParziale = prendiChilometri() * euroPerChilometro;
+
     // se età < 18 anni sconto 20%
-    if(userEta < 18){
+    if(prendiEta < 18){
         userTotale = userTotaleParziale - (userTotaleParziale * 20 / 100);
         messaggio = `Giovanotto il prezzo del tuo biglietto è ${userTotale.toFixed(2)}€`;
     }
 
     // se età > 65 anni sconto 40%
-    else if(userEta >= 65){
+    else if(prendiEta >= 65){
         userTotale = userTotaleParziale - (userTotaleParziale * 40 / 100);
         messaggio = `Nonno il prezzo del tuo biglietto è ${userTotale.toFixed(2)}€`;
     }
